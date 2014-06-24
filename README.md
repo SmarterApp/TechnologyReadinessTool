@@ -111,9 +111,12 @@ Add a resource element to Tomcat’s [tomcat_home]/conf/context.xml file.
       username="[db_username]"
       password="[db_password]"
       type="javax.sql.DataSource"
-      url="jdbc:mysql://localhost:3306/[schema_name]"
-      validationQuery="/* ping */" />
+      url="jdbc:mysql://localhost:3306/[schema_name]?autoReconnect=true"
+      validationQuery="SELECT 1"
+      testOnBorrow="true" />
 ```
+
+Note: Setup the `autoReconnect` in the url to reconnect timed out connections. Set the `testOnBorrow` to force a test of the connection using the `validationQuery` before using it each time. The `wait_timeout` period can be increased from the default of 8 hours if desired.
 
 ## Database
 Execute the database script to create the required tables for the application. The script is 'database.sql'. The application requires three schemas to run: core, core_batch and readiness. The core schema contains organization, device and consortia information. The core_batch schema has the tables required for dependencies on Quartz and Spring Batch. The readiness schema has tables for snapshot reporting data.
@@ -125,6 +128,11 @@ Enable case insensitive table names for queries. With this option MySQL will sto
 lower_case_table_names=1
 ```
 
+Increase the wait_timeout value for connections to the database. Default is 8 hours (28800 seconds).
+```properties
+wait_timeout=28800
+```
+
 ## Developer Mode
 
 ### Logging In
@@ -134,3 +142,11 @@ The database script creates a single user with the username 'ready_admin'. The a
 ### Struts
 
 Struts also supports a developer mode. This is enabled by defining a constant in either a struts-plugin.xml or struts.xml. See the Struts [documentation](http://struts.apache.org/release/2.3.x/docs/devmode.html) for more information.
+
+## Troubleshooting
+
+The following log entry can be safely ignored.
+
+```properties
+0    [localhost-startStop-1] ERROR org.hibernate.ejb.metamodel.MetadataContext  - Unable to locate static metamodel field : net.techreadiness.persistence.domain.ScopeDO_#path
+```
