@@ -256,7 +256,7 @@
 			<dependency>
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
-				<version>1.9.2</version>
+				<version>1.9.4</version>
 			</dependency>
 
 			<dependency>
@@ -668,7 +668,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.3.17</spring.version>
+		<spring.version>4.3.18</spring.version>
 		<spring-batch.version>3.0.10</spring-batch.version>
 		<spring-security.version>4.2.16</spring-security.version>
 		<ehcache.version>2.4.2</ehcache.version>
