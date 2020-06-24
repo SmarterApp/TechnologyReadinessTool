@@ -106,7 +106,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>5.0.1.Final</version>
+				<version>5.3.5</version>
 			</dependency>
 
 			<dependency>
@@ -256,7 +256,7 @@
 			<dependency>
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
-				<version>1.8.3</version>
+				<version>1.9.2</version>
 			</dependency>
 
 			<dependency>
@@ -298,7 +298,7 @@
 			<dependency>
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
-				<version>1.2.2</version>
+				<version>1.3.3</version>
 			</dependency>
 
 			<dependency>
@@ -418,7 +418,7 @@
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
-				<version>14.0.1</version>
+				<version>24.1.1</version>
 			</dependency>
 
 			<dependency>
@@ -668,12 +668,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.2.5.RELEASE</spring.version>
-		<spring-batch.version>2.1.9.RELEASE</spring-batch.version>
-		<spring-security.version>3.1.4.RELEASE</spring-security.version>
+		<spring.version>4.3.17</spring.version>
+		<spring-batch.version>3.0.10</spring-batch.version>
+		<spring-security.version>4.2.16</spring-security.version>
 		<ehcache.version>2.4.2</ehcache.version>
 		<cxf.version>2.7.5</cxf.version>
-		<struts2.version>2.3.16.3</struts2.version>
+		<struts2.version>2.3.35</struts2.version>
 		<drools.version>5.3.0.Final</drools.version>
 	</properties>
 
